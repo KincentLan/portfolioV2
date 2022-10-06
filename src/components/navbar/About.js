@@ -45,7 +45,7 @@ const itemData = [
 
 export default function About({bgColor}) {
     return (
-        <Grid sx={{minHeight: "100vh", minWidth: "320px", backgroundColor: bgColor}}
+        <Grid sx={{ minHeight: "100vh", minWidth: "320px", backgroundColor: bgColor}}
               container
               direction="row"
               justifyContent="center"

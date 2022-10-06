@@ -2,13 +2,14 @@ import * as React from 'react';
 import './App.css';
 import Navbar from "./components/navbar/Navbar";
 import {createTheme, ThemeProvider} from '@mui/material/styles';
-import {CssBaseline, useMediaQuery} from "@mui/material";
+import {CssBaseline, Stack, useMediaQuery} from "@mui/material";
 import {amber, grey} from "@mui/material/colors";
 import darkmodeBlue from "./color-palletes/darkmodeBlue";
 import Box from "@mui/material/Box";
 import MobileNavbar from "./components/navbar/MobileNavbar";
 import Hero from "./components/navbar/Hero";
 import About from "./components/navbar/About";
+import Projects from "./components/navbar/Projects";
 
 const NAV_ITEMS = ['About', 'Resume', 'Contact'];
 
@@ -114,12 +115,13 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
-            <Box>
+            <Stack direction="column">
                 <Navbar toggleDrawer={handleDrawerToggle} navItems={NAV_ITEMS}  />
                 <MobileNavbar toggleDrawer={handleDrawerToggle} mobileOpen={mobileOpen} navItems={NAV_ITEMS}/>
                 <Hero/>
-                <About bgColor={bgColors.background1}/>
-            </Box>
+                <Projects />
+                {/*<About bgColor={bgColors.background1}/>*/}
+            </Stack>
         </ThemeProvider>
     );
 }

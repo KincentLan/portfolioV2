@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@mui/icons-material": "^5.10.3",
-    "@mui/material": "^5.10.3"
+    "@mui/material": "^5.10.3",
+    "react-icons": "^4.4.0"
   }
 }

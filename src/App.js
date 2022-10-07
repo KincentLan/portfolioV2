@@ -1,15 +1,14 @@
 import * as React from 'react';
 import './App.css';
 import Navbar from "./components/navbar/Navbar";
-import {createTheme, ThemeProvider} from '@mui/material/styles';
-import {CssBaseline, Stack, useMediaQuery} from "@mui/material";
-import {amber, grey} from "@mui/material/colors";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CssBaseline, Stack, useMediaQuery } from "@mui/material";
+import { amber, grey } from "@mui/material/colors";
 import darkmodeBlue from "./color-palletes/darkmodeBlue";
 import Box from "@mui/material/Box";
 import MobileNavbar from "./components/navbar/MobileNavbar";
-import Hero from "./components/navbar/Hero";
-import About from "./components/navbar/About";
-import Projects from "./components/navbar/Projects";
+import Hero from "./components/Hero";
+import Projects from "./components/Projects";
 
 const NAV_ITEMS = ['About', 'Resume', 'Contact'];
 
@@ -26,6 +25,13 @@ const BASE_THEME = {
             fontSize: 25,
         },
 
+        cardTitle: {
+            fontSize: 30,
+        },
+        cardSubtitle: {
+            fontSize: 25,
+        },
+
         logo: {
             fontFamily: "Silkscreen",
             fontSize: 20,
@@ -35,8 +41,8 @@ const BASE_THEME = {
             fontSize: 18
         },
 
-        aboutParagraph : {
-            fontSize : 25
+        aboutParagraph: {
+            fontSize: 25
         },
 
         fontSize: 30,
@@ -75,15 +81,15 @@ const getPalette = (mode) => ({
 });
 
 const DARK_BGS = {
-    background1 : "#4e4a8b",
-    background2 : "#007d57",
-    background3 : "#0079ae"
+    background1: "#4e4a8b",
+    background2: "#007d57",
+    background3: "#0079ae"
 }
 
 const LIGHT_BGS = {
-    background1 : "#a58e65",
-    background2 : "#fff8ee",
-    background3 : "#ffc1b2"
+    background1: "#a58e65",
+    background2: "#fff8ee",
+    background3: "#ffc1b2"
 }
 
 const getTheme = (prefersDarkMode) => {
@@ -114,14 +120,16 @@ function App() {
 
     return (
         <ThemeProvider theme={theme}>
-            <CssBaseline/>
-            <Stack direction="column">
-                <Navbar toggleDrawer={handleDrawerToggle} navItems={NAV_ITEMS}  />
-                <MobileNavbar toggleDrawer={handleDrawerToggle} mobileOpen={mobileOpen} navItems={NAV_ITEMS}/>
-                <Hero/>
-                <Projects />
+            <CssBaseline />
+            <Box>
+                <Navbar toggleDrawer={handleDrawerToggle} navItems={NAV_ITEMS} />
+                <MobileNavbar toggleDrawer={handleDrawerToggle} mobileOpen={mobileOpen} navItems={NAV_ITEMS} />
+                <Stack direction="column" justifyContent="space-between" alignItems="center">
+                    <Hero />
+                    <Projects />
+                </Stack>
                 {/*<About bgColor={bgColors.background1}/>*/}
-            </Stack>
+            </Box>
         </ThemeProvider>
     );
 }

@@ -4,18 +4,23 @@ import Box from "@mui/material/Box";
 import {Grid} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import {TypeAnimation} from "react-type-animation";
-import JavaIcon from "../../assets/java.svg";
-import PythonIcon from "../../assets/python.svg";
-import JsIcon from "../../assets/javascript.svg";
-import DjangoIcon from "../../assets/django-icon.svg";
-import SpringIcon from "../../assets/spring-icon.svg";
-import MySQLIcon from "../../assets/mysql-icon.svg";
-import PostgresIcon from "../../assets/postgresql.svg";
+import JavaIcon from "../assets/java.svg";
+import PythonIcon from "../assets/python.svg";
+import JsIcon from "../assets/javascript.svg";
+import DjangoIcon from "../assets/django-icon.svg";
+import SpringIcon from "../assets/spring-icon.svg";
+import MySQLIcon from "../assets/mysql-icon.svg";
+import PostgresIcon from "../assets/postgresql.svg";
+import ReactIcon from "../assets/react.svg";
+import TsIcon from "../assets/typescript-icon.svg";
+import Tooltip from '@mui/material/Tooltip';
 
 const itemData = [
     {
         img: JavaIcon,
         title: 'Java',
+        height: "100%",
+        width: "50%"
     },
     {
         img: PythonIcon,
@@ -26,26 +31,41 @@ const itemData = [
         title: 'JavaScript',
     },
     {
+        img: TsIcon,
+        title: 'TypeScript'
+    },
+    {
+        img: ReactIcon,
+        title: 'React',
+        height: "90%",
+        width: "90%"
+    },
+    {
         img: DjangoIcon,
         title: 'Django',
     },
     {
         img: SpringIcon,
         title: 'Spring',
+        width: "84%"
     },
     {
         img: MySQLIcon,
         title: 'MySQL',
+        height: "100%",
+        width: "72%"
     },
     {
         img: PostgresIcon,
         title: 'PostgresQL',
+        height: "100%",
+        width: "72%"
     },
 ];
 
 export default function About({bgColor}) {
     return (
-        <Grid sx={{ minHeight: "100vh", minWidth: "320px", backgroundColor: bgColor}}
+        <Grid sx={{minHeight: "100vh", minWidth: "320px", backgroundColor: bgColor}}
               container
               direction="row"
               justifyContent="center"
@@ -75,7 +95,6 @@ export default function About({bgColor}) {
                             Since then, I've spent my free time attending hackathons or doing other projects.
                             One thing led to another and now I'm studying CS at Northeastern University. Some of my
                             courses include algorithms, machine learning, software engineering, and natural language processing.
-                            Outside of my studies, I recently have had the privilege of working at Ambri and VMware.
                         </Typography>
 
                         <br/>
@@ -96,17 +115,23 @@ export default function About({bgColor}) {
                                     width: 128,
                                     height: 128,
                                 },
+                                width: "80%",
+                                margin: "auto"
                             }}
                             justifyContent="center"
                         >
                             {itemData.map((item) => (
-                                <Box sx={{display: 'flex',  alignItems: 'center', backgroundColor: "#fff", borderRadius: 5}} justifyContent="center"> <img
+                                <Tooltip title={item.title}>
+                                <Box sx={{display: 'flex',  alignItems: 'center', backgroundColor: "#fff", borderRadius: 100}} justifyContent="center"> 
+                                <img
                                     src={item.img}
                                     srcSet={item.img}
                                     alt={item.title}
                                     loading="lazy"
-                                    style={{height: "92%", borderRadius: 10}}
+                                    style={{height: item.height ? item.height : "87%", 
+                                            width: item.width ? item.width : "auto", borderRadius: 100}}
                                 /> </Box>
+                                </Tooltip>
                             ))}
                         </Box>
                     </Grid>

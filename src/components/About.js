@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from "@mui/material/Box";
-import {Grid} from "@mui/material";
+import { Grid } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import {TypeAnimation} from "react-type-animation";
+import { TypeAnimation } from "react-type-animation";
 import JavaIcon from "../assets/java.svg";
 import PythonIcon from "../assets/python.svg";
 import JsIcon from "../assets/javascript.svg";
@@ -63,22 +63,22 @@ const itemData = [
     },
 ];
 
-export default function About({bgColor}) {
+export default function About({ bgColor }) {
     return (
-        <Grid sx={{minHeight: "100vh", minWidth: "320px", backgroundColor: bgColor}}
-              container
-              direction="row"
-              justifyContent="center"
-              alignItems="stretch">
+        <Grid sx={{ minHeight: "100vh", minWidth: "320px", backgroundColor: bgColor }}
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="stretch">
             <Grid item xs={10}>
-                <Box sx={{ display: 'flex', alignItems: 'center', height: "100%"}}
-                     justifyContent="center">
-                    <Grid sx={{pt : 6, pb : 6}}>
+                <Box sx={{ display: 'flex', alignItems: 'center', height: "100%" }}
+                    justifyContent="center">
+                    <Grid sx={{ pt: 6, pb: 6 }}>
                         <Typography variant="h5"> About Me </Typography>
                         <Divider />
                         <br />
 
-                        <Box width="100%" sx={{ display: 'flex', alignItems: "center"}} justifyContent="center">
+                        <Box width="100%" sx={{ display: 'flex', alignItems: "center" }} justifyContent="center">
                             <Typography>
                                 <TypeAnimation
                                     sequence={['Hello! My name is Kincent Lan :)',
@@ -88,7 +88,7 @@ export default function About({bgColor}) {
                                 />
                             </Typography>
                         </Box>
-                        <br/>
+                        <br />
                         <Typography variant="aboutParagraph">
                             I enjoy building new applications for people to use! I started my CS career around 2015
                             when I made my first rock, paper, and scissors game with Python. I was hooked.
@@ -97,14 +97,14 @@ export default function About({bgColor}) {
                             courses include algorithms, machine learning, software engineering, and natural language processing.
                         </Typography>
 
-                        <br/>
-                        <br/>
+                        <br />
+                        <br />
 
-                        <Box width="100%" sx={{ display: 'flex', alignItems: "center"}} justifyContent="center">
+                        <Box width="100%" sx={{ display: 'flex', alignItems: "center" }} justifyContent="center">
                             <Typography variant="aboutParagraph"> Here are some technologies that I am familiar with:</Typography>
                         </Box>
 
-                        <br/>
+                        <br />
 
                         <Box
                             sx={{
@@ -122,15 +122,17 @@ export default function About({bgColor}) {
                         >
                             {itemData.map((item) => (
                                 <Tooltip title={item.title}>
-                                <Box sx={{display: 'flex',  alignItems: 'center', backgroundColor: "#fff", borderRadius: 100}} justifyContent="center"> 
-                                <img
-                                    src={item.img}
-                                    srcSet={item.img}
-                                    alt={item.title}
-                                    loading="lazy"
-                                    style={{height: item.height ? item.height : "87%", 
-                                            width: item.width ? item.width : "auto", borderRadius: 100}}
-                                /> </Box>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', backgroundColor: "#fff", borderRadius: 100 }} justifyContent="center">
+                                        <img
+                                            src={item.img}
+                                            srcSet={item.img}
+                                            alt={item.title}
+                                            loading="lazy"
+                                            style={{
+                                                height: item.height ? item.height : "87%",
+                                                width: item.width ? item.width : "auto", borderRadius: 100
+                                            }}
+                                        /> </Box>
                                 </Tooltip>
                             ))}
                         </Box>

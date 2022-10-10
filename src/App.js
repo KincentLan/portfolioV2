@@ -9,8 +9,14 @@ import Box from "@mui/material/Box";
 import MobileNavbar from "./components/navbar/MobileNavbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
+import Work from './components/Work';
+import Contact from './components/Contact';
 
-const NAV_ITEMS = ['About', 'Resume', 'Contact'];
+
+const NAV_ITEMS = [
+    { name: 'Experience', to: "work" },
+    { name: 'Projects', to: "projects" },
+    { name: 'Contact', to: "contact" }];
 
 const BASE_THEME = {
     typography: {
@@ -80,18 +86,6 @@ const getPalette = (mode) => ({
     },
 });
 
-const DARK_BGS = {
-    background1: "#4e4a8b",
-    background2: "#007d57",
-    background3: "#0079ae"
-}
-
-const LIGHT_BGS = {
-    background1: "#a58e65",
-    background2: "#fff8ee",
-    background3: "#ffc1b2"
-}
-
 const getTheme = (prefersDarkMode) => {
     const mode = prefersDarkMode ? "dark" : "light";
     return {
@@ -109,11 +103,6 @@ function App() {
 
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
-    const bgColors = React.useMemo(() => {
-        if (prefersDarkMode) return DARK_BGS;
-        return LIGHT_BGS;
-    }, [prefersDarkMode]);
-
     const theme = React.useMemo(
         () => createTheme(getTheme(prefersDarkMode)), [prefersDarkMode]
     );
@@ -126,9 +115,10 @@ function App() {
                 <MobileNavbar toggleDrawer={handleDrawerToggle} mobileOpen={mobileOpen} navItems={NAV_ITEMS} />
                 <Stack direction="column" justifyContent="space-between" alignItems="center">
                     <Hero />
+                    <Work prefersDarkMode={prefersDarkMode} />
                     <Projects />
+                    <Contact />
                 </Stack>
-                {/*<About bgColor={bgColors.background1}/>*/}
             </Box>
         </ThemeProvider>
     );

@@ -44,9 +44,10 @@ const Item = styled(Box)(({ theme }) => ({
     // color: theme.palette.text.secondary,
 }));
 
-export default function Projects({ bgColor }) {
+export default function Projects() {
     return (
-        <Box sx={{ minWidth: "320px", backgroundColor: bgColor, width: "80%", paddingTop: "5vh" }}
+        <Box sx={{ minWidth: "320px", width: "80%", paddingTop: "5vh" }}
+            name="projects"
             container
             direction="row"
             justifyContent="center"

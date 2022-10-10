@@ -12,7 +12,6 @@ import Projects from "./components/Projects";
 import Work from './components/Work';
 import Contact from './components/Contact';
 
-
 const NAV_ITEMS = [
     { name: 'Experience', to: "work" },
     { name: 'Projects', to: "projects" },

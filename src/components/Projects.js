@@ -17,24 +17,28 @@ import { CardActionArea } from '@mui/material';
 
 const itemData = [
     {
-        img: HackMIT,
-        title: 'Avid',
-        description: "An AI-based program that automatically adds background music to a video."
-    },
-    {
-        img: Ivyhacks,
-        title: 'SimpleProof',
-        description: "An office-hours tool to facilitate communication between students and teaching assistants."
-    },
-    {
         img: Polidex,
         title: 'Polidex',
-        description: "A political wiki to help citizens hold their congressional representatives accountable. "
+        description: "A political wiki to help citizens hold their congressional representatives accountable. ",
+        link: "https://devpost.com/software/polidex"
     },
     {
         img: Chakrathon,
         title: 'Chakra UI Select',
-        description: "A custom select component that offers hook support for customized functionality."
+        description: "A custom select component that offers hook support for customized functionality.",
+        link: "https://github.com/joyliu-q/chakrathon-select"
+    },
+    {
+        img: HackMIT,
+        title: 'Avid',
+        description: "An AI-based program that automatically adds background music to a video.",
+        link: "https://github.com/joyliu-q/hackmit"
+    },
+    {
+        img: Ivyhacks,
+        title: 'SimpleProof',
+        description: "An office-hours tool to facilitate communication between students and teaching assistants.",
+        link: "https://github.com/KincentLan/ivyhacks"
     },
 ]
 const Item = styled(Box)(({ theme }) => ({
@@ -46,7 +50,7 @@ const Item = styled(Box)(({ theme }) => ({
 
 export default function Projects() {
     return (
-        <Box sx={{ minWidth: "320px", width: "80%", paddingTop: "5vh" }}
+        <Box sx={{ minWidth: "320px", width: "80%", minHeight: "80vh", paddingTop: "10vh" }}
             name="projects"
             container
             direction="row"
@@ -68,7 +72,9 @@ export default function Projects() {
                         <Grid container spacing={3} columns={{ xs: 4, sm: 6, md: 12 }}>
                             {itemData.map(item =>
                                 <Grid item xs={6}>
-                                    <CardActionArea sx={{ margin: "auto", height: "100%", minWidth: "300px" }}>
+                                    <CardActionArea sx={{ margin: "auto", height: "100%", minWidth: "300px" }}
+                                        href={item.link}
+                                        target="_blank">
                                         <Card sx={{ height: "100%", minWidth: "300px" }}>
                                             <CardMedia
                                                 component="img"

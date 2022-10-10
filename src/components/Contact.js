@@ -8,7 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 export default function Contact() {
     return (
         <Box
-            sx={{ minHeight: "50vh" }}
+            sx={{ minHeight: "40vh" }}
             display="flex"
             justifyContent="center"
             alignItems="center"
@@ -19,8 +19,12 @@ export default function Contact() {
                 <Typography variant="aboutParagraph" align="center">I'm very excited to meet you and explore new
                     opportunities with you. Please, let's connect!</Typography>
                 <br />
-                <Button sx={{ textTransform: "none", margin: "2%" }}
-                    variant="contained" size="small" endIcon={<SendIcon />}>Greet me!</Button>
+               <Button sx={{ textTransform: "none", margin: "2%" }}
+                    variant="contained" size="small" 
+                    endIcon={<SendIcon />}
+                    href="mailto:kincentlan@gmail.com">
+                        Greet me!
+                </Button>
             </Stack>
 
         </Box>

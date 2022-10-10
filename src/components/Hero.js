@@ -6,7 +6,7 @@ import Portrait from "../assets/kincent.jpg";
 
 export default function Hero() {
     return (
-        <Box sx={{ display: 'flex', alignItems: 'center', minHeight: "90vh", width: "80%", margin: "auto" }}
+        <Box sx={{ display: 'flex', alignItems: 'center', minHeight: "100vh", width: "80%", margin: "auto" }}
             justifyContent="center">
             <Stack direction={{ xs: 'column', sm: 'row' }} xs={{ minHeight: "100vh" }} alignItems="center"
                 justify="center">
